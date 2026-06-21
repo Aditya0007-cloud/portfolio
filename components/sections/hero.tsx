@@ -1,0 +1,198 @@
+"use client";
+
+import { motion } from "framer-motion";
+import {
+  ArrowDown,
+  BrainCircuit,
+  Code2,
+  Database,
+  Download,
+  Github,
+  Mail,
+  Send,
+  Server,
+  Sparkles
+} from "lucide-react";
+import Image from "next/image";
+import { useEffect, useMemo, useState } from "react";
+import { MagneticButton } from "@/components/motion/magnetic-button";
+import { Button } from "@/components/ui/button";
+import { socials } from "@/lib/data";
+
+const roles = ["Full-Stack Developer", "AI & Web Platforms", "Open Source Contributor"];
+const techIcons = [
+  { icon: Code2, label: "Next.js", className: "left-0 top-12" },
+  { icon: Server, label: "Node", className: "right-2 top-20" },
+  { icon: BrainCircuit, label: "AI", className: "bottom-20 left-2" },
+  { icon: Database, label: "DB", className: "bottom-6 right-10" }
+];
+
+export function Hero() {
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const currentRole = roles[roleIndex];
+  const typedRole = useMemo(() => currentRole.slice(0, charIndex), [currentRole, charIndex]);
+
+  useEffect(() => {
+    const doneTyping = charIndex === currentRole.length;
+    const timeout = window.setTimeout(
+      () => {
+        if (doneTyping) {
+          setCharIndex(0);
+          setRoleIndex((index) => (index + 1) % roles.length);
+          return;
+        }
+        setCharIndex((index) => index + 1);
+      },
+      doneTyping ? 1600 : 72
+    );
+    return () => window.clearTimeout(timeout);
+  }, [charIndex, currentRole.length]);
+
+  return (
+    <section id="home" className="relative min-h-screen overflow-hidden pt-32 sm:pt-36">
+      <div className="section-shell grid min-h-[calc(100vh-9rem)] items-center gap-14 pb-20 lg:grid-cols-[1.08fr_0.92fr]">
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-slate-300 backdrop-blur-xl"
+          >
+            <Sparkles className="h-4 w-4 text-cyan-300" />
+            Full-Stack Developer | AI & Web Platforms
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 26 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.08 }}
+            className="mb-3 font-display text-2xl font-semibold text-slate-200"
+          >
+            Hi, I&apos;m
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85, delay: 0.14 }}
+            className="font-display text-5xl font-bold leading-tight text-white sm:text-7xl lg:text-8xl"
+          >
+            <span className="gradient-text">Aditya Pareek</span>
+          </motion.h1>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.22 }}
+            className="mt-6 min-h-16 text-xl font-semibold text-slate-200 sm:text-2xl"
+          >
+            <span>{typedRole}</span>
+            <span className="ml-1 inline-block h-7 w-[2px] translate-y-1 bg-blue-300" />
+            <span className="mt-2 block text-base font-normal leading-8 text-slate-400 sm:text-lg">
+              Java + DSA | Full Stack Development | AI Applications
+            </span>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.32 }}
+            className="mt-9 flex flex-col gap-4 sm:flex-row"
+          >
+            <MagneticButton>
+              <Button asChild variant="gradient" size="lg">
+                <a href="#projects">
+                  <Github className="h-5 w-5" />
+                  View Projects
+                </a>
+              </Button>
+            </MagneticButton>
+            <MagneticButton>
+              <Button asChild variant="outline" size="lg">
+                <a href="/Aditya-Pareek-Resume.pdf" download>
+                  <Download className="h-5 w-5" />
+                  Download Resume
+                </a>
+              </Button>
+            </MagneticButton>
+            <MagneticButton>
+              <Button asChild variant="outline" size="lg">
+                <a href="#contact">
+                  <Send className="h-5 w-5" />
+                  Contact Me
+                </a>
+              </Button>
+            </MagneticButton>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.42 }}
+            className="mt-9 flex items-center gap-3"
+          >
+            {socials.map((social) => {
+              const Icon = social.icon;
+              return (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target={social.href.startsWith("http") ? "_blank" : undefined}
+                  rel={social.href.startsWith("http") ? "noreferrer" : undefined}
+                  aria-label={social.label}
+                  className="grid h-12 w-12 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-slate-200 transition hover:-translate-y-1 hover:border-blue-300/60 hover:text-white"
+                >
+                  <Icon className="h-5 w-5" />
+                </a>
+              );
+            })}
+            <a
+              href="mailto:pareekaditya0007@gmail.com"
+              className="ml-2 hidden items-center gap-2 text-sm font-medium text-slate-400 hover:text-white sm:flex"
+            >
+              <Mail className="h-4 w-4" />
+              pareekaditya0007@gmail.com
+            </a>
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92, y: 32 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mx-auto w-full max-w-[460px]"
+        >
+          <div className="absolute inset-8 rounded-full bg-premium-gradient opacity-25 blur-3xl" />
+          <div className="aurora-border relative overflow-hidden rounded-[8px] bg-slate-950/60 p-3 shadow-violet">
+            <Image
+              src="/hero-profile.png"
+              alt="Futuristic profile visual for Aditya Pareek"
+              width={1024}
+              height={1024}
+              priority
+              className="aspect-square rounded-[8px] object-cover"
+            />
+            <div className="pointer-events-none absolute inset-0 rounded-[8px] bg-gradient-to-t from-[#030711]/40 via-transparent to-white/5" />
+          </div>
+          {techIcons.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <motion.div
+                key={item.label}
+                className={`absolute ${item.className} hidden items-center gap-2 rounded-full border border-white/12 bg-slate-950/78 px-4 py-3 text-sm font-semibold text-white shadow-glow backdrop-blur-xl sm:flex`}
+                animate={{ y: [0, -12, 0] }}
+                transition={{ duration: 4 + index, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Icon className="h-4 w-4 text-cyan-300" />
+                {item.label}
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </div>
+      <a
+        href="#about"
+        aria-label="Scroll to about section"
+        className="absolute bottom-7 left-1/2 hidden -translate-x-1/2 rounded-full border border-white/10 p-3 text-slate-300 transition hover:text-white md:block"
+      >
+        <ArrowDown className="h-5 w-5 animate-bounce" />
+      </a>
+    </section>
+  );
+}
