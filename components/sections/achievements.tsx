@@ -10,7 +10,7 @@ export function Achievements() {
         <SectionHeading
           eyebrow="Achievements"
           title="Certifications, open source, and competitive programming momentum."
-          description="Resume-backed proof points across Google AI, AWS Cloud, generative AI foundations, LeetCode, and GSSoC 2026."
+          description="Resume-backed proof points across Oracle Java SE 21, Google AI, AWS Cloud, generative AI foundations, LeetCode, and GSSoC 2026."
         />
         <div className="relative mx-auto max-w-4xl">
           <div className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-blue-400 via-violet-400 to-transparent md:left-1/2" />

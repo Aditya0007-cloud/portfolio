@@ -130,6 +130,12 @@ export const projects = [
 
 export const achievements = [
   {
+    title: "Oracle Certified Professional: Java SE 21 Developer",
+    detail:
+      "Official Oracle University certification issued July 03, 2026, validating Java SE 21 knowledge and modern Java programming concepts.",
+    icon: Code2
+  },
+  {
     title: "Google AI Professional Certificate",
     detail: "Completed Google AI certification focused on practical AI foundations and applied workflows.",
     icon: Medal
