@@ -96,6 +96,7 @@ export const projects = [
   {
     title: "AI-Powered Finance Tracker",
     category: "AI",
+    period: "Jun '26 - Jun '26",
     description:
       "Engineered an AI-powered finance tracking platform with automated categorization for 500+ transactions, real-time analytics under 100ms, Prisma-backed PostgreSQL schemas, and secure Supabase RLS policies.",
     impact: "500+ transactions · under 100ms analytics · 60% less manual tracking",
@@ -106,6 +107,7 @@ export const projects = [
   {
     title: "Machine Learning Resume Screening System",
     category: "AI",
+    period: "May '26 - Jun '26",
     description:
       "Built an AI-powered resume screening and ranking platform using TF-IDF matching, ATS scoring across 100+ resume-job description pairs, 8+ REST APIs, analytics dashboards, and candidate shortlisting.",
     impact: "70% faster screening · 100+ resume pairs · 8+ APIs",
@@ -116,8 +118,9 @@ export const projects = [
   {
     title: "Config-Driven Full Stack App Runtime",
     category: "Full Stack",
+    period: "Apr '26 - May '26",
     description:
-      "Engineered a config-driven platform that generated 20+ UI modules and APIs from JSON configurations, automated schema generation and CRUD operations for 15+ entities, and enabled no-code app customization.",
+      "Engineered a config-driven platform that generated 20+ UI modules and APIs from JSON configurations, automated schema generation and CRUD operations for 15+ entities, and enabled no-code customization with secure authentication.",
     impact: "20+ UI modules · 15+ entities · 80% less backend setup",
     tech: ["React", "Node.js", "PostgreSQL", "JSON Configs", "Authentication"],
     github: "https://github.com/Aditya0007-cloud/app-generator",
