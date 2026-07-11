@@ -10,6 +10,15 @@ const highlights = [
   { label: "Core Strength", detail: "Java, DSA, Full Stack", icon: Lightbulb }
 ];
 
+const coursework = [
+  "Data Structures & Algorithms",
+  "Object-Oriented Programming",
+  "Database Management Systems",
+  "Software Engineering",
+  "Design & Analysis of Algorithms",
+  "Web Technologies"
+];
+
 export function About() {
   return (
     <section id="about" className="py-24">
@@ -21,7 +30,10 @@ export function About() {
         />
         <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
           <Reveal>
-            <Card className="h-full p-7">
+            <Card className="premium-panel h-full p-7">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
+                Profile
+              </p>
               <p className="text-lg leading-9 text-slate-300">
                 I&apos;m Aditya Pareek, a B.Tech Computer Science and Engineering student at
                 Vellore Institute of Technology, Amaravati (VIT-AP), currently maintaining an
@@ -34,6 +46,22 @@ export function About() {
                 Development Internship at Decode Labs and technical leadership work with the
                 Microsoft Student Chapter at VIT-AP.
               </p>
+              <div className="soft-divider my-7" />
+              <div>
+                <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">
+                  Relevant Coursework
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {coursework.map((course) => (
+                    <span
+                      key={course}
+                      className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm text-slate-300"
+                    >
+                      {course}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </Card>
           </Reveal>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -41,7 +69,7 @@ export function About() {
               const Icon = item.icon;
               return (
                 <Reveal key={item.label} delay={index * 0.08}>
-                  <Card className="group h-full p-6 transition duration-300 hover:-translate-y-2 hover:border-blue-300/40">
+                  <Card className="premium-panel group h-full p-6 transition duration-300 hover:-translate-y-2 hover:border-blue-300/40">
                     <div className="mb-5 grid h-12 w-12 place-items-center rounded-[8px] bg-blue-500/12 text-blue-200 ring-1 ring-blue-300/15 transition group-hover:bg-blue-400/20">
                       <Icon className="h-6 w-6" />
                     </div>

@@ -98,6 +98,7 @@ export const projects = [
     category: "AI",
     description:
       "Engineered an AI-powered finance tracking platform with automated categorization for 500+ transactions, real-time analytics under 100ms, Prisma-backed PostgreSQL schemas, and secure Supabase RLS policies.",
+    impact: "500+ transactions · under 100ms analytics · 60% less manual tracking",
     tech: ["Next.js", "Supabase", "Prisma ORM", "PostgreSQL", "Gemini API"],
     github: "https://github.com/Aditya0007-cloud/AI-Powered-Finance-Tracker-",
     accent: "from-cyan-400 via-blue-500 to-violet-500"
@@ -107,6 +108,7 @@ export const projects = [
     category: "AI",
     description:
       "Built an AI-powered resume screening and ranking platform using TF-IDF matching, ATS scoring across 100+ resume-job description pairs, 8+ REST APIs, analytics dashboards, and candidate shortlisting.",
+    impact: "70% faster screening · 100+ resume pairs · 8+ APIs",
     tech: ["Next.js", "FastAPI", "Python", "OpenAI", "TF-IDF"],
     github: "https://github.com/Aditya0007-cloud/resume-screening-system",
     accent: "from-violet-400 via-fuchsia-500 to-blue-500"
@@ -116,6 +118,7 @@ export const projects = [
     category: "Full Stack",
     description:
       "Engineered a config-driven platform that generated 20+ UI modules and APIs from JSON configurations, automated schema generation and CRUD operations for 15+ entities, and enabled no-code app customization.",
+    impact: "20+ UI modules · 15+ entities · 80% less backend setup",
     tech: ["React", "Node.js", "PostgreSQL", "JSON Configs", "Authentication"],
     github: "https://github.com/Aditya0007-cloud/app-generator",
     accent: "from-blue-400 via-sky-500 to-cyan-400"

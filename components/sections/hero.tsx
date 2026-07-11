@@ -27,6 +27,12 @@ const techIcons = [
   { icon: Database, label: "DB", className: "bottom-6 right-10" }
 ];
 
+const heroStats = [
+  { label: "LeetCode", value: "450+", icon: BrainCircuit },
+  { label: "Contest Rating", value: "1700+", icon: Code2 },
+  { label: "GPA", value: "8.73", icon: Sparkles }
+];
+
 export function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -57,7 +63,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-slate-300 backdrop-blur-xl"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/[0.06] px-4 py-2 text-sm text-cyan-100 shadow-glow backdrop-blur-xl"
           >
             <Sparkles className="h-4 w-4 text-cyan-300" />
             Full-Stack Developer | AI & Web Platforms
@@ -90,10 +96,19 @@ export function Hero() {
               Java + DSA | Full Stack Development | AI Applications
             </span>
           </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.27 }}
+            className="mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg"
+          >
+            I build reliable web platforms with clean interfaces, strong backend foundations,
+            and AI workflows for finance, resume screening, and config-driven applications.
+          </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.32 }}
+            transition={{ duration: 0.7, delay: 0.34 }}
             className="mt-9 flex flex-col gap-4 sm:flex-row"
           >
             <MagneticButton>
@@ -124,7 +139,29 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.42 }}
+            transition={{ duration: 0.7, delay: 0.44 }}
+            className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-3"
+          >
+            {heroStats.map((stat) => {
+              const Icon = stat.icon;
+              return (
+                <div
+                  key={stat.label}
+                  className="premium-panel rounded-[8px] border border-white/10 bg-white/[0.04] p-4 backdrop-blur-xl"
+                >
+                  <Icon className="mb-3 h-5 w-5 text-blue-200" />
+                  <p className="font-display text-2xl font-semibold text-white">{stat.value}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                    {stat.label}
+                  </p>
+                </div>
+              );
+            })}
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.52 }}
             className="mt-9 flex items-center gap-3"
           >
             {socials.map((social) => {
@@ -159,7 +196,7 @@ export function Hero() {
           className="relative mx-auto w-full max-w-[460px]"
         >
           <div className="absolute inset-8 rounded-full bg-premium-gradient opacity-25 blur-3xl" />
-          <div className="aurora-border relative overflow-hidden rounded-[8px] bg-slate-950/60 p-3 shadow-violet">
+          <div className="aurora-border premium-panel relative overflow-hidden rounded-[8px] bg-slate-950/60 p-3 shadow-violet">
             <Image
               src="/hero-profile.png"
               alt="Futuristic profile visual for Aditya Pareek"
@@ -169,6 +206,19 @@ export function Hero() {
               className="aspect-square rounded-[8px] object-cover"
             />
             <div className="pointer-events-none absolute inset-0 rounded-[8px] bg-gradient-to-t from-[#030711]/40 via-transparent to-white/5" />
+            <div className="absolute bottom-5 left-5 right-5 rounded-[8px] border border-white/10 bg-slate-950/70 p-4 backdrop-blur-xl">
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
+                    Current Focus
+                  </p>
+                  <p className="mt-1 font-display text-lg font-semibold text-white">
+                    AI products + full-stack systems
+                  </p>
+                </div>
+                <span className="h-10 w-10 rounded-full bg-premium-gradient opacity-80 blur-sm" />
+              </div>
+            </div>
           </div>
           {techIcons.map((item, index) => {
             const Icon = item.icon;
