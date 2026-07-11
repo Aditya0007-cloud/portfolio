@@ -35,11 +35,11 @@ const config: Config = {
         display: ["var(--font-space-grotesk)", "ui-sans-serif", "system-ui", "sans-serif"]
       },
       boxShadow: {
-        glow: "0 0 45px rgba(76, 154, 255, 0.24)",
-        violet: "0 24px 90px rgba(139, 92, 246, 0.28)"
+        glow: "0 0 45px rgba(45, 212, 191, 0.16)",
+        violet: "0 24px 90px rgba(20, 184, 166, 0.18)"
       },
       backgroundImage: {
-        "premium-gradient": "linear-gradient(135deg, #7c3aed 0%, #2563eb 48%, #06b6d4 100%)"
+        "premium-gradient": "linear-gradient(135deg, #2dd4bf 0%, #f59e0b 100%)"
       },
       gridTemplateColumns: {
         14: "repeat(14, minmax(0, 1fr))"

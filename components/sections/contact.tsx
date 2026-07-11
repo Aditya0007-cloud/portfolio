@@ -22,20 +22,20 @@ export function Contact() {
               <div className="mt-8 space-y-5">
                 <a
                   href="mailto:pareekaditya0007@gmail.com"
-                  className="flex items-center gap-4 rounded-[8px] border border-white/10 bg-white/[0.03] p-4 text-slate-300 transition hover:border-blue-300/40 hover:text-white"
+                  className="flex items-center gap-4 rounded-[8px] border border-white/10 bg-white/[0.03] p-4 text-slate-300 transition hover:border-teal-200/40 hover:text-white"
                 >
-                  <Mail className="h-5 w-5 text-blue-200" />
+                  <Mail className="h-5 w-5 text-teal-200" />
                   pareekaditya0007@gmail.com
                 </a>
                 <a
                   href="tel:+917002175645"
-                  className="flex items-center gap-4 rounded-[8px] border border-white/10 bg-white/[0.03] p-4 text-slate-300 transition hover:border-blue-300/40 hover:text-white"
+                  className="flex items-center gap-4 rounded-[8px] border border-white/10 bg-white/[0.03] p-4 text-slate-300 transition hover:border-teal-200/40 hover:text-white"
                 >
-                  <Phone className="h-5 w-5 text-cyan-200" />
+                  <Phone className="h-5 w-5 text-amber-200" />
                   +91 70021 75645
                 </a>
                 <div className="flex items-center gap-4 rounded-[8px] border border-white/10 bg-white/[0.03] p-4 text-slate-300">
-                  <MapPin className="h-5 w-5 text-violet-200" />
+                  <MapPin className="h-5 w-5 text-teal-200" />
                   Amaravati, India
                 </div>
               </div>

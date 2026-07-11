@@ -4,18 +4,18 @@
 
 :root {
   color-scheme: dark;
-  --background: 225 36% 5%;
-  --foreground: 220 24% 96%;
-  --card: 224 28% 8%;
+  --background: 218 38% 6%;
+  --foreground: 42 28% 94%;
+  --card: 219 30% 9%;
   --card-foreground: 220 24% 96%;
-  --muted: 225 19% 16%;
-  --muted-foreground: 218 12% 70%;
-  --border: 222 24% 19%;
+  --muted: 217 21% 16%;
+  --muted-foreground: 215 12% 69%;
+  --border: 214 23% 18%;
   --input: 222 22% 16%;
-  --ring: 221 83% 63%;
-  --primary: 231 91% 68%;
-  --primary-foreground: 222 47% 6%;
-  --secondary: 260 75% 64%;
+  --ring: 174 63% 45%;
+  --primary: 174 61% 48%;
+  --primary-foreground: 219 44% 7%;
+  --secondary: 36 89% 58%;
   --secondary-foreground: 220 24% 96%;
 }
 
@@ -25,24 +25,24 @@
 
 html {
   scroll-behavior: smooth;
-  background: #030711;
+  background: #071016;
 }
 
 body {
   min-height: 100vh;
   overflow-x: hidden;
   background:
-    linear-gradient(rgba(148, 163, 184, 0.032) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.032) 1px, transparent 1px),
-    linear-gradient(115deg, rgba(37, 99, 235, 0.2) 0%, transparent 22%, rgba(20, 184, 166, 0.12) 48%, transparent 72%),
-    linear-gradient(245deg, transparent 12%, rgba(168, 85, 247, 0.12) 38%, transparent 62%, rgba(245, 158, 11, 0.08) 100%),
-    #030711;
-  background-size: 68px 68px, 68px 68px, auto, auto, auto;
+    linear-gradient(rgba(148, 163, 184, 0.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.026) 1px, transparent 1px),
+    linear-gradient(140deg, rgba(20, 184, 166, 0.14) 0%, transparent 34%),
+    linear-gradient(315deg, rgba(245, 158, 11, 0.08) 0%, transparent 28%),
+    #071016;
+  background-size: 72px 72px, 72px 72px, auto, auto, auto;
   color: hsl(var(--foreground));
 }
 
 ::selection {
-  background: rgba(99, 102, 241, 0.4);
+  background: rgba(20, 184, 166, 0.35);
   color: white;
 }
 
@@ -51,32 +51,30 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #050915;
+  background: #071016;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #7c3aed, #2563eb);
+  background: linear-gradient(180deg, #2dd4bf, #f59e0b);
   border-radius: 999px;
 }
 
 .glass {
-  border: 1px solid rgba(148, 163, 184, 0.16);
+  border: 1px solid rgba(148, 163, 184, 0.14);
   background:
-    linear-gradient(135deg, rgba(15, 23, 42, 0.86), rgba(15, 23, 42, 0.5)),
-    linear-gradient(160deg, rgba(96, 165, 250, 0.09), transparent 32%, rgba(45, 212, 191, 0.045));
+    linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(12, 22, 30, 0.72)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent 42%);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.07),
-    0 22px 70px rgba(2, 6, 23, 0.4);
-  backdrop-filter: blur(18px);
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    0 18px 50px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(16px);
 }
 
 .gradient-text {
-  background: linear-gradient(100deg, #f8fafc 0%, #93c5fd 28%, #c4b5fd 60%, #67e8f9 100%);
-  background-size: 220% 220%;
+  background: linear-gradient(100deg, #fff7ed 0%, #f8fafc 42%, #5eead4 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: shimmer 8s ease infinite;
 }
 
 .section-shell {
@@ -94,8 +92,8 @@ body {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.055), transparent),
-    linear-gradient(180deg, transparent, rgba(15, 23, 42, 0.28), transparent);
+    linear-gradient(90deg, transparent, rgba(45, 212, 191, 0.055), transparent),
+    linear-gradient(180deg, transparent, rgba(15, 23, 42, 0.2), transparent);
   mask-image: linear-gradient(180deg, transparent, black 16%, black 84%, transparent);
 }
 
@@ -105,19 +103,11 @@ body {
 }
 
 .premium-panel::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.08) 42%, transparent 58%);
-  opacity: 0;
-  transform: translateX(-45%);
-  transition: opacity 300ms ease, transform 700ms ease;
+  display: none;
 }
 
 .premium-panel:hover::after {
-  opacity: 1;
-  transform: translateX(45%);
+  opacity: 0;
 }
 
 .lift-card {
@@ -129,15 +119,15 @@ body {
 }
 
 .lift-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-4px);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    0 28px 90px rgba(2, 6, 23, 0.48);
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 22px 56px rgba(0, 0, 0, 0.34);
 }
 
 .soft-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.42), rgba(196, 181, 253, 0.38), transparent);
+  background: linear-gradient(90deg, transparent, rgba(45, 212, 191, 0.34), rgba(245, 158, 11, 0.25), transparent);
 }
 
 .aurora-border {
@@ -150,12 +140,12 @@ body {
   inset: -1px;
   z-index: -1;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.75), rgba(37, 99, 235, 0.68), rgba(6, 182, 212, 0.55));
-  opacity: 0.48;
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.55), rgba(245, 158, 11, 0.42), rgba(148, 163, 184, 0.22));
+  opacity: 0.42;
 }
 
 .spotlight {
-  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(96, 165, 250, 0.18), transparent 14rem);
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.92), rgba(12, 22, 30, 0.76));
 }
 
 .focus-ring {
@@ -163,7 +153,7 @@ body {
 }
 
 .focus-ring:focus-visible {
-  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.35);
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.3);
 }
 
 @media (prefers-reduced-motion: reduce) {

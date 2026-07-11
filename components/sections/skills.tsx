@@ -16,19 +16,18 @@ const skillMetrics = [
 ];
 
 const accents = [
-  "from-cyan-300 via-blue-400 to-violet-400",
-  "from-blue-300 via-sky-400 to-cyan-300",
-  "from-violet-300 via-fuchsia-400 to-blue-400",
-  "from-emerald-300 via-cyan-400 to-blue-400",
-  "from-amber-200 via-blue-300 to-violet-400",
-  "from-indigo-300 via-blue-400 to-cyan-300",
-  "from-fuchsia-300 via-violet-400 to-blue-400"
+  "from-teal-300 to-emerald-300",
+  "from-amber-200 to-teal-300",
+  "from-sky-300 to-teal-300",
+  "from-emerald-300 to-cyan-300",
+  "from-amber-200 to-stone-200",
+  "from-teal-200 to-slate-200",
+  "from-cyan-200 to-amber-200"
 ];
 
 export function Skills() {
   return (
     <section id="skills" className="relative overflow-hidden py-24">
-      <div className="absolute left-1/2 top-24 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
       <div className="section-shell">
         <SectionHeading
           eyebrow="Skills"
@@ -41,10 +40,10 @@ export function Skills() {
             return (
               <div
                 key={metric.label}
-                className="lift-card group rounded-[8px] border border-white/10 bg-white/[0.035] p-4 backdrop-blur-xl hover:border-blue-300/40"
+                className="lift-card group rounded-[8px] border border-white/10 bg-white/[0.035] p-4 backdrop-blur-xl hover:border-teal-200/40"
               >
                 <div className="mb-4 flex items-center justify-between">
-                  <div className="grid h-10 w-10 place-items-center rounded-[8px] bg-blue-500/12 text-blue-200 ring-1 ring-blue-300/15">
+                  <div className="grid h-10 w-10 place-items-center rounded-[8px] bg-teal-300/10 text-teal-200 ring-1 ring-teal-200/15">
                     <Icon className="h-5 w-5" />
                   </div>
                   <span
@@ -68,12 +67,11 @@ export function Skills() {
             const accent = accents[index % accents.length];
             return (
               <Reveal key={group.title} delay={index * 0.05}>
-                <Card className="lift-card group relative h-full overflow-hidden p-6 hover:border-violet-300/40">
+                <Card className="lift-card group relative h-full overflow-hidden p-6 hover:border-teal-200/35">
                   <div className={cn("absolute inset-x-0 top-0 h-1 bg-gradient-to-r", accent)} />
-                  <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-blue-400/10 blur-2xl transition group-hover:bg-violet-400/15" />
                   <div className="mb-6 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="grid h-12 w-12 place-items-center rounded-[8px] bg-violet-500/12 text-violet-200 ring-1 ring-violet-300/15 transition group-hover:scale-105 group-hover:bg-blue-500/15">
+                      <div className="grid h-12 w-12 place-items-center rounded-[8px] bg-teal-300/10 text-teal-100 ring-1 ring-teal-200/15 transition group-hover:bg-teal-300/15">
                         <Icon className="h-5 w-5" />
                       </div>
                       <div>
@@ -85,7 +83,7 @@ export function Skills() {
                         </p>
                       </div>
                     </div>
-                    <span className="rounded-full border border-blue-300/20 bg-blue-400/10 px-3 py-1 text-sm font-semibold text-blue-100">
+                    <span className="rounded-[8px] border border-amber-200/20 bg-amber-200/10 px-3 py-1 text-sm font-semibold text-amber-100">
                       {group.level}%
                     </span>
                   </div>
@@ -106,8 +104,8 @@ export function Skills() {
                         className={cn(
                           "rounded-full border px-3 py-1.5 text-sm font-medium transition",
                           skillIndex < 2
-                            ? "border-blue-300/25 bg-blue-400/10 text-blue-100"
-                            : "border-white/10 bg-white/[0.04] text-slate-300 group-hover:border-blue-300/25"
+                            ? "border-teal-200/25 bg-teal-300/10 text-teal-50"
+                            : "border-white/10 bg-white/[0.04] text-slate-300 group-hover:border-teal-200/25"
                         )}
                       >
                         {skill}

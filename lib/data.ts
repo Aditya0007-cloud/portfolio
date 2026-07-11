@@ -102,7 +102,7 @@ export const projects = [
     impact: "500+ transactions · under 100ms analytics · 60% less manual tracking",
     tech: ["Next.js", "Supabase", "Prisma ORM", "PostgreSQL", "Gemini API"],
     github: "https://github.com/Aditya0007-cloud/AI-Powered-Finance-Tracker-",
-    accent: "from-cyan-400 via-blue-500 to-violet-500"
+    accent: "from-teal-300 via-emerald-300 to-amber-200"
   },
   {
     title: "Machine Learning Resume Screening System",
@@ -113,7 +113,7 @@ export const projects = [
     impact: "70% faster screening · 100+ resume pairs · 8+ APIs",
     tech: ["Next.js", "FastAPI", "Python", "OpenAI", "TF-IDF"],
     github: "https://github.com/Aditya0007-cloud/resume-screening-system",
-    accent: "from-violet-400 via-fuchsia-500 to-blue-500"
+    accent: "from-amber-200 via-teal-300 to-cyan-200"
   },
   {
     title: "Config-Driven Full Stack App Runtime",
@@ -124,7 +124,7 @@ export const projects = [
     impact: "20+ UI modules · 15+ entities · 80% less backend setup",
     tech: ["React", "Node.js", "PostgreSQL", "JSON Configs", "Authentication"],
     github: "https://github.com/Aditya0007-cloud/app-generator",
-    accent: "from-blue-400 via-sky-500 to-cyan-400"
+    accent: "from-sky-300 via-teal-300 to-stone-200"
   }
 ] as const;
 

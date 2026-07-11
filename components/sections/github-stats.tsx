@@ -11,17 +11,17 @@ const graphCells = Array.from({ length: 84 }, (_, index) => ({
 }));
 
 const languages = [
-  { name: "Java", value: "32%", width: "32%", color: "bg-orange-300", text: "text-orange-200" },
+  { name: "Java", value: "32%", width: "32%", color: "bg-amber-300", text: "text-amber-200" },
   {
     name: "JavaScript",
     value: "28%",
     width: "28%",
-    color: "bg-yellow-300",
-    text: "text-yellow-200"
+    color: "bg-teal-300",
+    text: "text-teal-200"
   },
-  { name: "Python", value: "20%", width: "20%", color: "bg-blue-300", text: "text-blue-200" },
-  { name: "SQL", value: "12%", width: "12%", color: "bg-violet-300", text: "text-violet-200" },
-  { name: "C++", value: "8%", width: "8%", color: "bg-cyan-300", text: "text-cyan-200" }
+  { name: "Python", value: "20%", width: "20%", color: "bg-sky-300", text: "text-sky-200" },
+  { name: "SQL", value: "12%", width: "12%", color: "bg-stone-300", text: "text-stone-200" },
+  { name: "C++", value: "8%", width: "8%", color: "bg-emerald-300", text: "text-emerald-200" }
 ];
 
 const dsaTopics = [
@@ -41,21 +41,21 @@ const signalCards = [
     value: "Java + DSA",
     detail: "450+ solved problems",
     icon: Target,
-    accent: "from-orange-300 to-blue-400"
+    accent: "from-amber-300 to-teal-300"
   },
   {
     title: "Competitive Signal",
     value: "Top 12%",
     detail: "1700+ contest rating",
     icon: Activity,
-    accent: "from-blue-300 to-cyan-300"
+    accent: "from-teal-300 to-stone-200"
   },
   {
     title: "Open Source",
     value: "GSSoC '26",
     detail: "Features, fixes, PRs",
     icon: GitPullRequestArrow,
-    accent: "from-violet-300 to-fuchsia-300"
+    accent: "from-sky-300 to-teal-300"
   }
 ];
 
@@ -70,7 +70,6 @@ function languageNote(index: number) {
 export function GithubStats() {
   return (
     <section id="github" className="relative overflow-hidden py-24">
-      <div className="absolute right-[8%] top-24 h-72 w-72 rounded-full bg-violet-500/10 blur-3xl" />
       <div className="section-shell">
         <SectionHeading
           eyebrow="Coding Profile"
@@ -84,11 +83,10 @@ export function GithubStats() {
             return (
               <div
                 key={stat.label}
-                className="group relative overflow-hidden rounded-[8px] border border-white/10 bg-white/[0.035] p-5 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-blue-300/40"
+                className="lift-card group relative overflow-hidden rounded-[8px] border border-white/10 bg-white/[0.035] p-5 backdrop-blur-xl hover:border-teal-200/35"
               >
-                <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-blue-400/10 blur-2xl transition group-hover:bg-violet-400/15" />
                 <div className="relative mb-5 flex items-center justify-between">
-                  <div className="grid h-11 w-11 place-items-center rounded-[8px] bg-blue-500/12 text-blue-200 ring-1 ring-blue-300/15">
+                  <div className="grid h-11 w-11 place-items-center rounded-[8px] bg-teal-300/10 text-teal-200 ring-1 ring-teal-200/15">
                     <Icon className="h-5 w-5" />
                   </div>
                   <span className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
@@ -109,7 +107,7 @@ export function GithubStats() {
             <Card className="h-full overflow-hidden p-6">
               <div className="mb-7 flex flex-col justify-between gap-5 sm:flex-row sm:items-start">
                 <div>
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-300">
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-teal-300">
                     Competitive Programming
                   </p>
                   <h3 className="font-display text-3xl font-semibold text-white">
@@ -130,13 +128,13 @@ export function GithubStats() {
                 <div className="rounded-[8px] border border-white/10 bg-slate-950/35 p-5">
                   <div className="mb-4 flex items-center justify-between">
                     <span className="text-sm font-semibold text-slate-300">Activity Map</span>
-                    <Activity className="h-5 w-5 text-cyan-300" />
+                    <Activity className="h-5 w-5 text-teal-300" />
                   </div>
                   <div className="grid grid-cols-12 gap-1.5" aria-hidden>
                     {graphCells.map((cell) => (
                       <span
                         key={cell.id}
-                        className="aspect-square rounded-[3px] bg-cyan-300"
+                        className="aspect-square rounded-[3px] bg-teal-300"
                         style={{ opacity: cell.opacity }}
                       />
                     ))}
@@ -181,9 +179,9 @@ export function GithubStats() {
                   <span
                     key={topic}
                     className={cn(
-                      "inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm",
+                      "inline-flex items-center gap-2 rounded-[8px] border px-3 py-1.5 text-sm",
                       index < 3
-                        ? "border-blue-300/25 bg-blue-400/10 text-blue-100"
+                        ? "border-teal-200/25 bg-teal-300/10 text-teal-50"
                         : "border-white/10 bg-white/[0.035] text-slate-300"
                     )}
                   >
@@ -199,14 +197,14 @@ export function GithubStats() {
             <Card className="h-full overflow-hidden p-6">
               <div className="mb-7 flex items-start justify-between gap-4">
                 <div>
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-violet-300">
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-amber-200">
                     Language Distribution
                   </p>
                   <h3 className="font-display text-3xl font-semibold text-white">
                     Built Around Java, Web, and AI Workflows
                   </h3>
                 </div>
-                <BarChart3 className="h-6 w-6 shrink-0 text-violet-300" />
+                <BarChart3 className="h-6 w-6 shrink-0 text-amber-200" />
               </div>
 
               <div className="mb-7 flex h-3 overflow-hidden rounded-full bg-white/8">

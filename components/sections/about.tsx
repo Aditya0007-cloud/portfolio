@@ -30,8 +30,8 @@ export function About() {
         />
         <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
           <Reveal>
-            <Card className="premium-panel h-full p-7">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
+            <Card className="h-full p-7">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-teal-300">
                 Profile
               </p>
               <p className="text-lg leading-9 text-slate-300">
@@ -48,14 +48,14 @@ export function About() {
               </p>
               <div className="soft-divider my-7" />
               <div>
-                <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">
+                <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-amber-200">
                   Relevant Coursework
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {coursework.map((course) => (
                     <span
                       key={course}
-                      className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm text-slate-300"
+                      className="rounded-[8px] border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm text-slate-300"
                     >
                       {course}
                     </span>
@@ -69,8 +69,8 @@ export function About() {
               const Icon = item.icon;
               return (
                 <Reveal key={item.label} delay={index * 0.08}>
-                  <Card className="premium-panel group h-full p-6 transition duration-300 hover:-translate-y-2 hover:border-blue-300/40">
-                    <div className="mb-5 grid h-12 w-12 place-items-center rounded-[8px] bg-blue-500/12 text-blue-200 ring-1 ring-blue-300/15 transition group-hover:bg-blue-400/20">
+                  <Card className="lift-card group h-full p-6 hover:border-teal-200/35">
+                    <div className="mb-5 grid h-12 w-12 place-items-center rounded-[8px] bg-teal-300/10 text-teal-200 ring-1 ring-teal-200/15 transition group-hover:bg-teal-300/15">
                       <Icon className="h-6 w-6" />
                     </div>
                     <h3 className="font-display text-xl font-semibold text-white">{item.label}</h3>

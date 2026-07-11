@@ -45,19 +45,19 @@ export function Navbar() {
     <header className="fixed left-0 right-0 top-4 z-50 px-4">
       <nav
         className={cn(
-          "mx-auto flex w-full max-w-6xl items-center justify-between rounded-full border px-4 py-3 transition",
+          "mx-auto flex w-full max-w-6xl items-center justify-between rounded-[8px] border px-4 py-3 transition",
           scrolled
-            ? "border-white/12 bg-slate-950/72 shadow-2xl shadow-black/30 backdrop-blur-xl"
-            : "border-white/8 bg-slate-950/30 backdrop-blur-md"
+            ? "border-white/12 bg-[#071016]/88 shadow-2xl shadow-black/28 backdrop-blur-xl"
+            : "border-white/8 bg-[#071016]/58 backdrop-blur-md"
         )}
         aria-label="Primary navigation"
       >
         <a href="#home" className="flex items-center gap-3 text-white">
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-white text-sm font-black text-slate-950 shadow-glow">
+          <span className="grid h-9 w-9 place-items-center rounded-[8px] bg-teal-300 text-sm font-black text-slate-950 shadow-lg shadow-teal-950/20">
             AP
           </span>
           <span className="font-display text-lg font-bold sm:text-xl">
-            Aditya Pareek<span className="text-blue-300">.</span>
+            Aditya Pareek<span className="text-teal-300">.</span>
           </span>
         </a>
         <div className="hidden items-center gap-1 lg:flex">
@@ -67,9 +67,9 @@ export function Navbar() {
               href={item.href}
               aria-current={activeSection === item.href ? "page" : undefined}
               className={cn(
-                "rounded-full px-3 py-2 text-sm font-medium transition",
+                "rounded-[8px] px-3 py-2 text-sm font-medium transition",
                 activeSection === item.href
-                  ? "bg-white text-slate-950 shadow-glow"
+                  ? "bg-white text-slate-950"
                   : "text-slate-300 hover:bg-white/[0.06] hover:text-white"
               )}
             >
@@ -87,7 +87,7 @@ export function Navbar() {
         </div>
         <button
           type="button"
-          className="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-white lg:hidden"
+          className="grid h-10 w-10 place-items-center rounded-[8px] border border-white/10 text-white lg:hidden"
           onClick={() => setOpen((value) => !value)}
           aria-label={open ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={open}
