@@ -11,12 +11,30 @@ const particles = Array.from({ length: 34 }, (_, index) => ({
   duration: 7 + (index % 6)
 }));
 
+const lightTrails = Array.from({ length: 5 }, (_, index) => ({
+  id: index,
+  top: `${18 + index * 16}%`,
+  delay: index * 0.8,
+  width: `${22 + index * 8}rem`
+}));
+
 export function Particles() {
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-      <div className="absolute left-[8%] top-[12%] h-72 w-72 rounded-full bg-blue-500/10 blur-3xl animate-pulse-glow" />
-      <div className="absolute right-[3%] top-[36%] h-80 w-80 rounded-full bg-violet-500/10 blur-3xl animate-pulse-glow" />
-      <div className="absolute bottom-[6%] left-[40%] h-64 w-64 rounded-full bg-cyan-500/8 blur-3xl animate-pulse-glow" />
+      {lightTrails.map((trail) => (
+        <motion.span
+          key={trail.id}
+          className="absolute h-px rotate-[-18deg] bg-gradient-to-r from-transparent via-cyan-200/24 to-transparent"
+          style={{ top: trail.top, left: "-32rem", width: trail.width }}
+          animate={{ x: ["0vw", "140vw"], opacity: [0, 0.85, 0] }}
+          transition={{
+            duration: 10 + trail.id * 1.2,
+            delay: trail.delay,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      ))}
       {particles.map((particle) => (
         <motion.span
           key={particle.id}

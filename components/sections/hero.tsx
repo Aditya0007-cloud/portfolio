@@ -8,9 +8,11 @@ import {
   Database,
   Download,
   Github,
+  Globe2,
   Mail,
   Send,
   Server,
+  ShieldCheck,
   Sparkles
 } from "lucide-react";
 import Image from "next/image";
@@ -31,6 +33,12 @@ const heroStats = [
   { label: "LeetCode", value: "450+", icon: BrainCircuit },
   { label: "Contest Rating", value: "1700+", icon: Code2 },
   { label: "GPA", value: "8.73", icon: Sparkles }
+];
+
+const availability = [
+  { label: "Open to", value: "Full-stack & AI internships", icon: Sparkles },
+  { label: "Based in", value: "India · Remote friendly", icon: Globe2 },
+  { label: "Strength", value: "Java, DSA, product APIs", icon: ShieldCheck }
 ];
 
 export function Hero() {
@@ -56,17 +64,17 @@ export function Hero() {
   }, [charIndex, currentRole.length]);
 
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden pt-32 sm:pt-36">
+    <section id="home" className="section-band relative min-h-screen overflow-hidden pt-32 sm:pt-36">
       <div className="section-shell grid min-h-[calc(100vh-9rem)] items-center gap-14 pb-20 lg:grid-cols-[1.08fr_0.92fr]">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/[0.06] px-4 py-2 text-sm text-cyan-100 shadow-glow backdrop-blur-xl"
+            className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/[0.06] px-4 py-2 text-sm text-cyan-100 shadow-glow backdrop-blur-xl"
           >
             <Sparkles className="h-4 w-4 text-cyan-300" />
-            Full-Stack Developer | AI & Web Platforms
+            <span className="truncate">Full-Stack Developer | AI & Web Platforms</span>
           </motion.div>
           <motion.p
             initial={{ opacity: 0, y: 26 }}
@@ -80,7 +88,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.14 }}
-            className="font-display text-5xl font-bold leading-tight text-white sm:text-7xl lg:text-8xl"
+            className="max-w-4xl font-display text-5xl font-bold leading-tight text-white sm:text-7xl lg:text-8xl"
           >
             <span className="gradient-text">Aditya Pareek</span>
           </motion.h1>
@@ -109,7 +117,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.34 }}
-            className="mt-9 flex flex-col gap-4 sm:flex-row"
+            className="mt-9 grid gap-3 sm:inline-flex sm:flex-wrap"
           >
             <MagneticButton>
               <Button asChild variant="gradient" size="lg">
@@ -139,7 +147,30 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.44 }}
+            transition={{ duration: 0.7, delay: 0.39 }}
+            className="mt-7 grid gap-3 rounded-[8px] border border-white/10 bg-slate-950/35 p-3 backdrop-blur-xl sm:grid-cols-3"
+          >
+            {availability.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.label} className="flex items-center gap-3 rounded-[8px] px-2 py-2">
+                  <div className="grid h-10 w-10 shrink-0 place-items-center rounded-[8px] bg-white/[0.055] text-cyan-200 ring-1 ring-white/10">
+                    <Icon className="h-4 w-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                      {item.label}
+                    </p>
+                    <p className="truncate text-sm font-medium text-slate-200">{item.value}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.46 }}
             className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-3"
           >
             {heroStats.map((stat) => {
@@ -147,7 +178,7 @@ export function Hero() {
               return (
                 <div
                   key={stat.label}
-                  className="premium-panel rounded-[8px] border border-white/10 bg-white/[0.04] p-4 backdrop-blur-xl"
+                  className="premium-panel lift-card rounded-[8px] border border-white/10 bg-white/[0.04] p-4 backdrop-blur-xl"
                 >
                   <Icon className="mb-3 h-5 w-5 text-blue-200" />
                   <p className="font-display text-2xl font-semibold text-white">{stat.value}</p>
@@ -161,7 +192,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.52 }}
+            transition={{ duration: 0.7, delay: 0.54 }}
             className="mt-9 flex items-center gap-3"
           >
             {socials.map((social) => {
@@ -195,8 +226,16 @@ export function Hero() {
           transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="relative mx-auto w-full max-w-[460px]"
         >
-          <div className="absolute inset-8 rounded-full bg-premium-gradient opacity-25 blur-3xl" />
           <div className="aurora-border premium-panel relative overflow-hidden rounded-[8px] bg-slate-950/60 p-3 shadow-violet">
+            <div className="absolute left-6 top-6 z-10 hidden max-w-[220px] rounded-[8px] border border-white/10 bg-slate-950/76 p-3 text-xs text-slate-300 shadow-2xl backdrop-blur-xl sm:block">
+              <div className="mb-3 flex items-center gap-1.5">
+                <span className="h-2 w-2 rounded-full bg-rose-300" />
+                <span className="h-2 w-2 rounded-full bg-amber-300" />
+                <span className="h-2 w-2 rounded-full bg-emerald-300" />
+              </div>
+              <p className="font-mono text-cyan-200">build.status = ready</p>
+              <p className="mt-1 font-mono text-slate-400">ship(ai + web)</p>
+            </div>
             <Image
               src="/hero-profile.png"
               alt="Futuristic profile visual for Aditya Pareek"
@@ -206,7 +245,7 @@ export function Hero() {
               className="aspect-square rounded-[8px] object-cover"
             />
             <div className="pointer-events-none absolute inset-0 rounded-[8px] bg-gradient-to-t from-[#030711]/40 via-transparent to-white/5" />
-            <div className="absolute bottom-5 left-5 right-5 rounded-[8px] border border-white/10 bg-slate-950/70 p-4 backdrop-blur-xl">
+            <div className="absolute bottom-5 left-5 right-5 rounded-[8px] border border-white/10 bg-slate-950/74 p-4 backdrop-blur-xl">
               <div className="flex items-center justify-between gap-4">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
@@ -216,7 +255,9 @@ export function Hero() {
                     AI products + full-stack systems
                   </p>
                 </div>
-                <span className="h-10 w-10 rounded-full bg-premium-gradient opacity-80 blur-sm" />
+                <span className="grid h-10 w-10 place-items-center rounded-[8px] bg-premium-gradient text-white shadow-glow">
+                  <Code2 className="h-5 w-5" />
+                </span>
               </div>
             </div>
           </div>

@@ -41,7 +41,7 @@ export function Skills() {
             return (
               <div
                 key={metric.label}
-                className="group rounded-[8px] border border-white/10 bg-white/[0.035] p-4 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-blue-300/40"
+                className="lift-card group rounded-[8px] border border-white/10 bg-white/[0.035] p-4 backdrop-blur-xl hover:border-blue-300/40"
               >
                 <div className="mb-4 flex items-center justify-between">
                   <div className="grid h-10 w-10 place-items-center rounded-[8px] bg-blue-500/12 text-blue-200 ring-1 ring-blue-300/15">
@@ -68,7 +68,7 @@ export function Skills() {
             const accent = accents[index % accents.length];
             return (
               <Reveal key={group.title} delay={index * 0.05}>
-                <Card className="group relative h-full overflow-hidden p-6 transition duration-300 hover:-translate-y-2 hover:border-violet-300/40">
+                <Card className="lift-card group relative h-full overflow-hidden p-6 hover:border-violet-300/40">
                   <div className={cn("absolute inset-x-0 top-0 h-1 bg-gradient-to-r", accent)} />
                   <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-blue-400/10 blur-2xl transition group-hover:bg-violet-400/15" />
                   <div className="mb-6 flex items-center justify-between">
@@ -85,7 +85,7 @@ export function Skills() {
                         </p>
                       </div>
                     </div>
-                    <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm font-semibold text-blue-200">
+                    <span className="rounded-full border border-blue-300/20 bg-blue-400/10 px-3 py-1 text-sm font-semibold text-blue-100">
                       {group.level}%
                     </span>
                   </div>
